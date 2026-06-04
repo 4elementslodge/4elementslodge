@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Elements Lodge | Komani, South Africa</title>
+    <!-- Elegant Serif and Clean Sans-Serif Fonts via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Design Tokens & Variables --- */
+        :root {
+            --primary: #1A2226;       /* Elegant Deep Charcoal */
+            --accent: #C5A880;        /* Luxurious Champagne Gold */
+            --accent-hover: #B3956D;  /* Darker Gold Accent */
+            --light-bg: #F9F8F6;      /* Off-White / Cream */
+            --text-dark: #2C3539;     /* Soft Black for text readability */
+            --text-light: #FFFFFF;    /* Pure White */
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.4s ease;
+        }
+
+        /* --- Reset & Global Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* --- Layout Container --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 30px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-contact {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-contact a:hover {
+            color: var(--text-light);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 34, 38, 0.65), rgba(26, 34, 38, 0.5)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            color: #E2E2E2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background-color: var(--accent);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        /* --- Welcome / About Section --- */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .about h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* --- Feature Highlights (The 4 Elements) --- */
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .element-card {
+            background: var(--text-light);
+            padding: 40px 20px;
+            border: 1px solid #EAE6DF;
+            transition: var(--transition);
+        }
+
+        .element-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .element-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .element-card p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0;
+        }
+
+        /* --- Footer / Contact Section --- */
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .contact-item {
+            max-width: 400px;
+        }
+
+        .contact-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p, .contact-item a {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--text-light);
+            text-decoration: none;
+            line-height: 1.4;
+        }
+
+        .contact-item a {
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background-color: rgba(197, 168, 128, 0.3);
+            margin: 40px auto;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        /* --- Responsive Media Queries --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+                letter-spacing: 2px;
+            }
+            .about h2, .footer-content h2 {
+                font-size: 2.2rem;
+            }
+            .contact-item p, .contact-item a {
+                font-size: 1.3rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">4 Elements<span>.</span></a>
+            <div class="nav-contact">
+                Enquiries: <a href="tel:0839438508">083 943 8508</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Showcase Area -->
+    <section class="hero">
+        <div class="hero-content">
+            <p>Welcome to Serenity</p>
+            <h1>4 Elements Lodge</h1>
+            <p>Queenstown • Komani • South Africa</p>
+            <a href="#contact" class="btn">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Welcome & Philosophy Section -->
+    <section class="about">
+        <div class="container">
+            <span class="section-tag">An Oasis of Comfort</span>
+            <h2>Where Luxury Meets Nature</h2>
+            <p>
+                Nestled in the heart of Queenstown, Komani, the 4 Elements Lodge offers an exquisite, tranquil getaway for both discerning business travelers and families seeking peace. Experience the perfect harmony of premium local hospitality, elegant self-catering amenities, and pristine comfort.
+            </p>
+
+            <!-- Creative Concept: Grid highlighting the "4 Elements" themed experience -->
+            <div class="elements-grid">
+                <div class="element-card">
+                    <h3>Earth</h3>
+                    <p>Grounded in authentic Eastern Cape heritage and hospitality.</p>
+                </div>
+                <div class="element-card">
+                    <h3>Water</h3>
+                    <p>Unwind and refresh beside our tranquil, sparkling guest pool.</p>
+                </div>
+                <div class="element-card">
+                    <h3>Air</h3>
+                    <p>Breathe easy on private patios designed for crisp morning coffee.</p>
+                </div>
+                <div class="element-card">
+                    <h3>Fire</h3>
+                    <p>Gather under the night sky around our bespoke traditional boma & braai.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact Details -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <span class="section-tag" style="color: var(--accent);">Reservations</span>
+            <h2>Begin Your Stay</h2>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="label">Location</span>
+                    <p>51 Frost Street,<br>Queenstown, Komani,<br>South Africa, 5320</p>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="contact-item">
+                    <span class="label">Phone / WhatsApp</span>
+                    <a href="tel:0839438508">083 943 8508</a>
+                </div>
+            </div>
+
+            <p class="copyright">&copy; 2026 4 Elements Lodge. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
