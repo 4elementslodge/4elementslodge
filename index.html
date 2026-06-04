@@ -91,7 +91,6 @@
         /* --- Hero Section --- */
         .hero {
             height: 100vh;
-            /* Using the beautiful stone feature wall exterior image as the hero backdrop */
             background: linear-gradient(rgba(26, 34, 38, 0.65), rgba(26, 34, 38, 0.55)), 
                         url('https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA9394a143fb6bde28092518cc6371075b63e3f320f6b1df7b527beff7de57eb223b44407a678cae7c1ce0cfe8ab3cd37ed224?w=2400&fit=crop&auto=enhance,format,compress&q=80') center/cover no-repeat;
             display: flex;
@@ -192,7 +191,7 @@
             font-weight: 500;
         }
 
-        .about p {
+        .about p.intro-text {
             max-width: 750px;
             margin: 0 auto 60px auto;
             color: #555;
@@ -243,6 +242,40 @@
             font-size: 1rem;
             color: #666;
             margin-bottom: 0;
+        }
+
+        /* --- Host Profile Section --- */
+        .host-section {
+            padding: 100px 0;
+            background-color: var(--text-light);
+            text-align: center;
+        }
+
+        .host-card {
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 1px solid #EAE6DF;
+            border-bottom: 1px solid #EAE6DF;
+            padding: 60px 20px;
+        }
+
+        .host-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            color: var(--primary);
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .host-message {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #4A5357;
+            line-height: 1.8;
+            text-align: justify;
+            text-align-last: center;
         }
 
         /* --- Footer / Contact Section --- */
@@ -306,6 +339,8 @@
             .branding-display h2 { font-size: 2rem; }
             .showcase-row, .showcase-row.reverse { flex-direction: column; text-align: center; gap: 30px; }
             .showcase-img img { height: 280px; }
+            .host-section h2 { font-size: 2.2rem; }
+            .host-message { font-size: 1.15rem; }
             .contact-item p, .contact-item a { font-size: 1.3rem; }
             .nav-wrapper { flex-direction: column; gap: 10px; }
         }
@@ -318,7 +353,7 @@
         <div class="container nav-wrapper">
             <a href="#" class="logo">4 Elements<span>.</span></a>
             <div class="nav-contact">
-                Reservations: <a href="tel:0839438508">083 943 8508</a>
+                Enquiries: <a href="mailto:4elementslodge@gmail.com">4elementslodge@gmail.com</a>
             </div>
         </div>
     </header>
@@ -337,7 +372,6 @@
     <section class="branding-display">
         <div class="container">
             <div class="logo-image-container">
-                <!-- Using your absolute image path highlighting the white concrete entrance sign -->
                 <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA4478958bb5121a264475f542129c96ead062a0a2d51c731ef0d5f05c67550122f6c563d88bd64a26647e7a38426993f05629?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="4 Elements Lodge Outside Entrance Logo Sign">
             </div>
             <span>Our Main Signage</span>
@@ -349,18 +383,17 @@
     <section class="about">
         <div class="container">
             <span class="section-tag">Premium South African Accommodation</span>
-            <p>
+            <p class="intro-text">
                 Perfectly situated at 51 Frost Street, 4 Elements Lodge merges security, absolute privacy, and meticulous design. Catering flawlessly to corporate executives and relaxation-seeking groups, our address is the gold standard for your stay in Komani.
             </p>
 
             <!-- Row 1: The Pool Area Experience -->
             <div class="showcase-row">
                 <div class="showcase-img">
-                    <!-- Your crystal clean pool environment image -->
                     <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA414d3dc022503c544ae6366e14b92b6d241c512d75577cfdca7522d830ead2c6b70b5151f5fedcc35fb41b8dacfdc3409e30?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="4 Elements Lodge Crystal Clear Pool Area">
                 </div>
                 <div class="showcase-text">
-                    <h3>An Pristine Escape</h3>
+                    <h3>A Pristine Escape</h3>
                     <p>
                         Cool off or lounge serenely by our flawlessly kept sparkling swimming pool. Designed specifically to grant a quiet, refreshing layout away from the daily noise, it is an ideal oasis to reset and rest your mind.
                     </p>
@@ -370,7 +403,6 @@
             <!-- Row 2: Secure Luxury Details -->
             <div class="showcase-row reverse">
                 <div class="showcase-img">
-                    <!-- Elegant security entryway / architecture image -->
                     <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA5170e4c90427fcb45855605d5c518a87f7389f4b15ce1883dc54e4c91f1311832806613382443e29b9cc9bd173eedd9784ad?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="4 Elements Lodge Secure High-End Compound">
                 </div>
                 <div class="showcase-text">
@@ -380,7 +412,27 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Meet Your Host Section -->
+    <section class="host-section">
+        <div class="container">
+            <div class="host-card">
+                <span class="section-tag" style="margin-bottom: 10px;">The Heart of Hospitality</span>
+                <h2>Meet Your Host: Tracy Dougias</h2>
+                <div class="host-message">
+                    <p style="margin-bottom: 20px;">
+                        Welcome to 4 Elements Lodge! I’m Tracy Dougias, the founder and heart behind this sanctuary. My vision for the lodge was simple: to create a space where people could step away from the noise of everyday life and reconnect with the natural world.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        To me, hospitality isn’t just about providing a bed for the night; it’s about creating an experience. Whether you’re here to ground yourself in nature, breathe in the fresh air, gather around a roaring fire with loved ones, or simply find your flow by the water, I’ve designed every corner of 4 Elements to be a haven of comfort and renewal.
+                    </p>
+                    <p>
+                        I am so thrilled to welcome you to our beautiful space, and I look forward to making your stay unforgettable.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -398,8 +450,15 @@
                 <div class="divider"></div>
                 
                 <div class="contact-item">
-                    <span class="label">Mobile / WhatsApp</span>
+                    <span class="label">Phone / WhatsApp</span>
                     <a href="tel:0839438508">083 943 8508</a>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="contact-item">
+                    <span class="label">Email Address</span>
+                    <a href="mailto:4elementslodge@gmail.com">4elementslodge@gmail.com</a>
                 </div>
             </div>
 
