@@ -310,7 +310,7 @@
         }
 
         .host-card {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             border-top: 1px solid #EAE6DF;
             border-bottom: 1px solid #EAE6DF;
@@ -318,14 +318,15 @@
         }
 
         .avatar-container {
-            width: 180px;
-            height: 230px;
+            width: 200px;
+            height: 260px;
             margin: 0 auto 25px auto;
             border-radius: 4px;
             border: 3px solid var(--text-light);
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             overflow: hidden;
             background-color: #EAE6DF;
+            position: relative;
         }
 
         .host-avatar {
@@ -333,6 +334,14 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        /* Ensures ImgBB page embed scales nicely behind frame borders if required */
+        .avatar-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
         }
 
         .host-section h2 {
@@ -347,11 +356,19 @@
         .host-message {
             font-family: var(--font-serif);
             font-size: 1.3rem;
-            font-style: italic;
             color: #4A5357;
             line-height: 1.8;
             text-align: justify;
             text-align-last: center;
+        }
+
+        .signature-block {
+            margin-top: 30px;
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-align: center;
         }
 
         /* --- Reviews / Testimonials Section --- */
@@ -700,27 +717,31 @@
         </div>
     </section>
 
-    <!-- Meet Your Host Section -->
+    <!-- Meet Your Host Section / Meaning Behind the Logo -->
     <section class="host-section">
         <div class="container">
             <div class="host-card">
-                <!-- Personal Photo Frame Container -->
+                <!-- Frame configured to host the specific ImgBB image link structure -->
                 <div class="avatar-container">
-                    <img src="image_a62dc8.jpg" alt="Tracy Dougias - Owner & Host of 4 Elements Lodge" class="host-avatar">
+                    <iframe src="https://ibb.co/0jDjVfDK" scrolling="no"></iframe>
                 </div>
-                <span class="section-tag" style="margin-bottom: 10px;">The Heart of Hospitality</span>
-                <h2>Meet Your Host: Tracy Dougias</h2>
+                <span class="section-tag" style="margin-bottom: 10px;">Our Identity & Journey</span>
+                <h2>The Meaning Behind Our Logo</h2>
                 <div class="host-message">
                     <p style="margin-bottom: 20px;">
-                        Welcome to 4 Elements Lodge! I’m Tracy Dougias, the founder and heart behind this sanctuary. My vision for the lodge was simple: to create a space where people could step away from the noise of everyday life and reconnect with the natural world.
+                        When you look at the logo for 4 Elements Lodge, you will see a journey woven into symbols: a cross, a heartbeat, a heart, and a dove.
                     </p>
                     <p style="margin-bottom: 20px;">
-                        To me, hospitality isn’t just about providing a bed for the night; it’s about creating an experience. Whether you’re here to ground yourself in nature, breathe in the fresh air, gather around a roaring fire with loved ones, or simply find your flow by the water, I’ve designed every corner of 4 Elements to be a haven of comfort and renewal.
+                        To us, this isn't just a design—it is the soul of our lodge. The cross represents our grounding and faith. The heartbeat and heart symbolize the vibrant life, love, and connection we share here today—anchored by my children, George and Leo, whose energy and involvement bring this beautiful space to life for our family, friends, and guests.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        The dove carries a special, quiet weight. It flies in honor of the people we have lost—those precious souls who are no longer walking beside us, but whose presence we carry in our hearts forever.
                     </p>
                     <p>
-                        I am so thrilled to welcome you to our beautiful space, and I look forward to making your stay unforgettable.
+                        4 Elements Lodge was built to be a peaceful haven. It is a place to step away from the world, to remember, to heal, and to find quiet comfort. Whether you are here to celebrate life with loved ones or to find a moment of calm reflection, our doors—and our hearts—are open to you.
                     </p>
                 </div>
+                <div class="signature-block">- The Dougias Family</div>
             </div>
         </div>
     </section>
