@@ -317,14 +317,22 @@
             padding: 60px 20px;
         }
 
-        .host-avatar {
+        .avatar-container {
             width: 180px;
             height: 230px;
-            object-fit: cover;
+            margin: 0 auto 25px auto;
             border-radius: 4px;
-            margin-bottom: 25px;
             border: 3px solid var(--text-light);
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            background-color: #EAE6DF;
+        }
+
+        .host-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .host-section h2 {
@@ -696,9 +704,10 @@
     <section class="host-section">
         <div class="container">
             <div class="host-card">
-                <!-- Personal Photo Insertion -->
-                <img src="image_a62dc8.jpg" alt="Tracy Dougias - Owner & Host of 4 Elements Lodge" class="host-avatar">
-                <br>
+                <!-- Personal Photo Frame Container -->
+                <div class="avatar-container">
+                    <img src="image_a62dc8.jpg" alt="Tracy Dougias - Owner & Host of 4 Elements Lodge" class="host-avatar">
+                </div>
                 <span class="section-tag" style="margin-bottom: 10px;">The Heart of Hospitality</span>
                 <h2>Meet Your Host: Tracy Dougias</h2>
                 <div class="host-message">
