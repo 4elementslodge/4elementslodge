@@ -879,6 +879,14 @@
             <p class="designer-credit">Website made by George D</p>
         </div>
     </footer>
-
+<script>
+        document.querySelector('form').addEventListener('submit', function() {
+            // Use setTimeout to ensure the fields clear right after the click event
+            setTimeout(() => {
+                this.reset();
+            }, 500);
+        });
+    </script>
 </body>
+
 </html>
