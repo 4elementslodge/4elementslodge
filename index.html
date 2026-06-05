@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4 Elements Lodge | Queenstown, Komani</title>
-    <!-- Elegant Typography -->
+    <!-- Elegant Typography & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
@@ -44,7 +45,7 @@
             padding: 0 20px;
         }
 
-        /* --- Fixed & Fixed Overlap Mobile Header --- */
+        /* --- Fixed Mobile Header --- */
         header {
             background-color: rgba(26, 34, 38, 0.95);
             backdrop-filter: blur(10px);
@@ -256,10 +257,55 @@
             color: #666;
         }
 
+        /* --- Amenities Section --- */
+        .amenities-section {
+            padding: 100px 0;
+            background-color: var(--text-light);
+            text-align: center;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .amenity-card {
+            padding: 40px 20px;
+            background-color: var(--light-bg);
+            border: 1px solid #EAE6DF;
+            transition: var(--transition);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .amenity-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .amenity-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .amenity-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
         /* --- Host Profile Section --- */
         .host-section {
             padding: 100px 0;
-            background-color: var(--text-light);
+            background-color: var(--light-bg);
             text-align: center;
         }
 
@@ -269,6 +315,16 @@
             border-top: 1px solid #EAE6DF;
             border-bottom: 1px solid #EAE6DF;
             padding: 60px 20px;
+        }
+
+        .host-avatar {
+            width: 180px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border: 3px solid var(--text-light);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         .host-section h2 {
@@ -290,21 +346,86 @@
             text-align-last: center;
         }
 
-        /* --- Professional Contact Form Section --- */
-        .contact-form-section {
+        /* --- Reviews / Testimonials Section --- */
+        .reviews-section {
             padding: 100px 0;
-            background-color: var(--light-bg);
+            background-color: var(--primary);
+            color: var(--text-light);
             text-align: center;
         }
 
-        .form-container {
-            max-width: 650px;
-            margin: 40px auto 0 auto;
-            background: var(--text-light);
-            padding: 50px 40px;
-            border: 1px solid #EAE6DF;
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            padding: 40px 30px;
             text-align: left;
+            position: relative;
+        }
+
+        .review-card .stars {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .review-card p {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #D1D5DB;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .review-card .author {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* --- Contact & Location Combo Grid --- */
+        .contact-form-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .contact-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .form-container {
+            background: var(--text-light);
+            padding: 45px 40px;
+            border: 1px solid #EAE6DF;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .map-container {
+            height: 100%;
+            min-height: 520px;
+            border: 1px solid #EAE6DF;
+            background-color: #EEE;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 520px;
+            border: 0;
+            display: block;
         }
 
         .form-row {
@@ -349,7 +470,7 @@
         }
 
         .form-group textarea {
-            height: 150px;
+            height: 120px;
             resize: vertical;
         }
 
@@ -436,7 +557,17 @@
             text-transform: uppercase;
         }
 
-        /* --- Responsive Media Viewports --- */
+        /* --- Responsive Viewports --- */
+        @media (max-width: 992px) {
+            .contact-layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .map-container, .map-container iframe {
+                min-height: 400px;
+                height: 400px;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 12px 0;
@@ -535,10 +666,39 @@
         </div>
     </section>
 
+    <!-- Amenities Grid Block -->
+    <section class="amenities-section">
+        <div class="container">
+            <span class="section-tag">Designed For Your Comfort</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">Premium Lodge Amenities</h2>
+            
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <i class="fa-solid fa-solar-panel"></i>
+                    <h3>Backup Solar Power</h3>
+                    <p>Uninterrupted luxury. Our premium backup solar configuration guarantees light, connectivity, and absolute comfort during load shedding instances.</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-wifi"></i>
+                    <h3>High-Speed Wi-Fi</h3>
+                    <p>Stay seamlessly aligned with work commitments or stream your choice entertainment via our complimentary uncapped fibre internet link.</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Secure Compound</h3>
+                    <p>Your absolute safety remains paramount. Enjoy total peace of mind with robust high walls, private remote gate access control setups, and secure parking arrays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Meet Your Host Section -->
     <section class="host-section">
         <div class="container">
             <div class="host-card">
+                <!-- Personal Photo Insertion -->
+                <img src="image_a62dc8.jpg" alt="Tracy Dougias - Owner & Host of 4 Elements Lodge" class="host-avatar">
+                <br>
                 <span class="section-tag" style="margin-bottom: 10px;">The Heart of Hospitality</span>
                 <h2>Meet Your Host: Tracy Dougias</h2>
                 <div class="host-message">
@@ -556,45 +716,83 @@
         </div>
     </section>
 
-    <!-- Pro-Grade Contact Form Section -->
+    <!-- Verified Guest Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <span class="section-tag" style="color: var(--accent);">Guest Testimonials</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">What Our Guests Say</h2>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Tracy went out of her way to help us. First thing I noticed is how nice the rooms smell. Everything was crisp and beautiful... Real value for money, greatly appreciated!"</p>
+                    <div class="author">Susan L. • Family Stay</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"After 8 hours on the road, this was an oasis. Wonderful stay, owner went out of her way to make our stay as pleasant as possible. Very safe and quiet neighborhood."</p>
+                    <div class="author">Anton D. • Couple Getaway</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Nice quiet accommodation. Host was very accommodating, not obtrusive, and gave us the run of the property. Accommodation was large, spacious, with all amenities."</p>
+                    <div class="author">Michael C. • Corporate Traveler</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiries & Google Map Combo Layout -->
     <section id="enquire" class="contact-form-section">
         <div class="container">
-            <span class="section-tag">Booking Enquiries</span>
-            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">Secure Your Dates</h2>
+            <span class="section-tag">Booking Enquiries & Location</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px; text-align: center;">Secure Your Dates</h2>
             
-            <!-- Professional Static Website Email Collector Box -->
-            <div class="form-container">
-                <form action="https://formspree.io/f/xqeoageg" method="POST">
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">First Name</label>
-                            <input type="text" id="name" name="firstName" required placeholder="e.g. John">
+            <div class="contact-layout-grid">
+                <!-- Contact Form Wrapper -->
+                <div class="form-container">
+                    <form action="https://formspree.io/f/xqeoageg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">First Name</label>
+                                <input type="text" id="name" name="firstName" required placeholder="e.g. John">
+                            </div>
+                            <div class="form-group">
+                                <label for="surname">Surname</label>
+                                <input type="text" id="surname" name="lastName" required placeholder="e.g. Smith">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="surname">Surname</label>
-                            <input type="text" id="surname" name="lastName" required placeholder="e.g. Smith">
-                        </div>
-                    </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="e.g. john@example.com">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="_replyto" required placeholder="e.g. john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phoneNumber" required placeholder="e.g. 082 123 4567">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phoneNumber" required placeholder="e.g. 082 123 4567">
+
+                        <div class="form-group full-width">
+                            <label for="message">Message / Booking Requirements</label>
+                            <textarea id="message" name="message" required placeholder="Please let us know your preferred check-in dates and number of guests..."></textarea>
                         </div>
-                    </div>
 
-                    <div class="form-group full-width">
-                        <label for="message">Message / Booking Requirements</label>
-                        <textarea id="message" name="message" required placeholder="Please let us know your preferred check-in dates and number of guests..."></textarea>
-                    </div>
+                        <button type="submit" class="submit-btn">Submit Booking Request</button>
+                    </form>
+                </div>
 
-                    <button type="submit" class="submit-btn">Submit Booking Request</button>
-                </form>
+                <!-- Google Maps Interactive Embed -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.5002047814324!2d26.868779076295325!3d-31.89295557004491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6211606ffc6b5b%3A0xeae062cf4e723cc9!2s51%20Frost%20St%2C%20Queenstown%2C%205320!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </section>
