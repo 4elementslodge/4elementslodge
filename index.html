@@ -6,52 +6,40 @@
     <meta name="theme-color" content="#1A2226">
     <title>4 Elements Lodge | Queenstown, Komani</title>
 
-    <!-- DNS Prefetch: speeds up connections to external domains on mobile -->
     <link rel="dns-prefetch" href="//i.ibb.co">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//scontent-jnb2-1.xx.fbcdn.net">
 
-    <!-- Preload critical hero image first -->
-    <link rel="preload" as="image" href="sunsetofthebnb.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="https://i.ibb.co/4wQ08yZ0/sunsetofthebnb.jpg" fetchpriority="high">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome: deferred so it does not block first paint -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <style>
-        /* ===========================
-           DESIGN TOKENS
-        =========================== */
         :root {
-            --primary:      #1A2226;
-            --accent:       #C5A880;
-            --light-bg:     #F9F8F6;
-            --text-dark:    #2C3539;
-            --text-light:   #FFFFFF;
-            --font-serif:   'Cormorant Garamond', Georgia, serif;
-            --font-sans:    'Montserrat', sans-serif;
-            --transition:   all 0.4s ease;
+            --primary: #1A2226;
+            --accent: #C5A880;
+            --light-bg: #F9F8F6;
+            --text-dark: #2C3539;
+            --text-light: #FFFFFF;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.4s ease;
         }
 
-        /* ===========================
-           RESET & BASE
-        =========================== */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: var(--font-sans);
@@ -59,14 +47,10 @@
             background-color: var(--text-light);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            /* Prevent horizontal scroll bleed on mobile */
             overflow-x: hidden;
         }
 
-        /* Placeholder background while images load */
-        img {
-            background-color: #EAE6DF;
-        }
+        img { background-color: #EAE6DF; }
 
         .container {
             max-width: 1200px;
@@ -74,9 +58,6 @@
             padding: 0 20px;
         }
 
-        /* ===========================
-           HEADER
-        =========================== */
         header {
             background-color: rgba(26, 34, 38, 0.95);
             backdrop-filter: blur(10px);
@@ -125,7 +106,6 @@
             border: 1px solid var(--accent);
             transition: var(--transition);
             white-space: nowrap;
-            /* Good touch target size */
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -138,16 +118,12 @@
             border-color: var(--text-light);
         }
 
-        /* ===========================
-           HERO
-        =========================== */
         .hero {
             height: 100vh;
-            /* Solid colour fallback if image fails to load */
             background-color: var(--primary);
             background-image:
                 linear-gradient(rgba(26, 34, 38, 0.65), rgba(26, 34, 38, 0.55)),
-                url('sunsetofthebnb.jpg');
+                url('https://i.ibb.co/4wQ08yZ0/sunsetofthebnb.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -159,16 +135,6 @@
             padding-top: 80px;
         }
 
-        /*
-         * HERO LOGO — FIXED:
-         *  - Reduced max-width to 95px (was 160px)
-         *  - Removed aspect-ratio: 1/1 which was forcing a square distortion
-         *  - Image now displays at its natural proportions
-         *
-         * NOTE: The Facebook CDN URL for this logo expires 9 June 2026.
-         *  Please re-upload the logo image to https://imgbb.com and
-         *  replace the src URL below with the permanent ibb.co link.
-         */
         .hero-logo {
             max-width: 95px;
             width: 100%;
@@ -216,9 +182,6 @@
             border-color: var(--text-light);
         }
 
-        /* ===========================
-           BRANDING DISPLAY
-        =========================== */
         .branding-display {
             padding: 100px 0 60px 0;
             background-color: var(--text-light);
@@ -256,9 +219,6 @@
             letter-spacing: 1px;
         }
 
-        /* ===========================
-           ABOUT / SHOWCASE
-        =========================== */
         .about {
             padding: 100px 0;
             background-color: var(--light-bg);
@@ -326,9 +286,6 @@
             color: #666;
         }
 
-        /* ===========================
-           ROOM GALLERY
-        =========================== */
         .gallery-section {
             padding: 100px 0;
             background-color: var(--text-light);
@@ -369,9 +326,6 @@
             font-weight: 600;
         }
 
-        /* ===========================
-           AMENITIES
-        =========================== */
         .amenities-section {
             padding: 100px 0;
             background-color: var(--light-bg);
@@ -416,9 +370,6 @@
             color: #666;
         }
 
-        /* ===========================
-           HOST SECTION
-        =========================== */
         .host-section {
             padding: 100px 0;
             background-color: var(--text-light);
@@ -477,9 +428,6 @@
             text-align: center;
         }
 
-        /* ===========================
-           REVIEWS
-        =========================== */
         .reviews-section {
             padding: 100px 0;
             background-color: var(--primary);
@@ -524,9 +472,6 @@
             font-weight: 600;
         }
 
-        /* ===========================
-           CONTACT + MAP
-        =========================== */
         .contact-form-section {
             padding: 100px 0;
             background-color: var(--light-bg);
@@ -591,7 +536,6 @@
         .form-group textarea {
             font-family: var(--font-sans);
             padding: 14px;
-            /* 16px minimum prevents iOS auto-zoom on focus */
             font-size: 16px;
             border: 1px solid #D1C9BC;
             background-color: #FAF9F6;
@@ -640,9 +584,6 @@
             border-color: var(--accent);
         }
 
-        /* ===========================
-           FOOTER
-        =========================== */
         footer {
             background-color: var(--primary);
             color: var(--text-light);
@@ -706,9 +647,6 @@
             text-transform: uppercase;
         }
 
-        /* ===========================
-           FLOATING WHATSAPP BUTTON
-        =========================== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -744,9 +682,6 @@
             letter-spacing: 1px;
         }
 
-        /* ===========================
-           RESPONSIVE — TABLET
-        =========================== */
         @media (max-width: 992px) {
             .contact-layout-grid {
                 grid-template-columns: 1fr;
@@ -758,61 +693,39 @@
             }
         }
 
-        /* ===========================
-           RESPONSIVE — MOBILE
-        =========================== */
         @media (max-width: 768px) {
-            header {
-                padding: 12px 0;
-            }
+            header { padding: 12px 0; }
             .nav-wrapper {
                 flex-direction: column;
                 gap: 8px;
                 text-align: center;
             }
-            .logo {
-                font-size: 1.6rem;
-            }
+            .logo { font-size: 1.6rem; }
             .nav-btn {
                 padding: 8px 18px;
                 font-size: 0.7rem;
             }
-            .hero {
-                padding-top: 110px;
-            }
-            /* Smaller logo on mobile screens */
+            .hero { padding-top: 110px; }
             .hero-logo {
                 max-width: 75px;
                 margin-bottom: 12px;
             }
-            .hero-content h1 {
-                font-size: 2.6rem;
-            }
+            .hero-content h1 { font-size: 2.6rem; }
             .hero-content p {
                 font-size: 0.9rem;
                 letter-spacing: 2px;
             }
-            .branding-display h2 {
-                font-size: 2rem;
-            }
+            .branding-display h2 { font-size: 2rem; }
             .showcase-row,
             .showcase-row.reverse {
                 flex-direction: column;
                 text-align: center;
                 gap: 30px;
             }
-            .showcase-img img {
-                height: 260px;
-            }
-            .host-section h2 {
-                font-size: 2.2rem;
-            }
-            .host-message {
-                font-size: 1.1rem;
-            }
-            .form-container {
-                padding: 30px 20px;
-            }
+            .showcase-img img { height: 260px; }
+            .host-section h2 { font-size: 2.2rem; }
+            .host-message { font-size: 1.1rem; }
+            .form-container { padding: 30px 20px; }
             .form-row {
                 flex-direction: column;
                 gap: 0;
@@ -824,19 +737,12 @@
             .contact-item a {
                 font-size: 1.3rem;
             }
-
-            /* Compact WhatsApp button on mobile — icon only */
-            .whatsapp-text {
-                display: none;
-            }
+            .whatsapp-text { display: none; }
             .whatsapp-float {
                 padding: 15px;
                 right: 20px;
                 bottom: 20px;
             }
-
-            /* Disable hover card lifts on mobile — touch devices do not need them
-               and disabling saves GPU compositing work */
             .room-card:hover,
             .amenity-card:hover {
                 transform: none;
@@ -845,13 +751,8 @@
             }
         }
 
-        /* ===========================
-           REDUCED MOTION PREFERENCE
-        =========================== */
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
+            html { scroll-behavior: auto; }
             *,
             *::before,
             *::after {
@@ -863,9 +764,6 @@
 </head>
 <body>
 
-    <!-- =====================
-         FIXED HEADER
-    ===================== -->
     <header>
         <div class="container nav-wrapper">
             <a href="#" class="logo">4 Elements Lodge<span>.</span></a>
@@ -873,22 +771,9 @@
         </div>
     </header>
 
-    <!-- =====================
-         HERO
-         NOTE: The logo image below uses a Facebook CDN URL that expires
-         9 June 2026. Please re-upload the logo to https://imgbb.com and
-         replace the src with the permanent i.ibb.co URL.
-    ===================== -->
     <section class="hero">
         <div class="hero-content">
-            <img src="4elelogo.png"
-                 alt="4 Elements Lodge Logo"
-                 class="hero-logo"
-                 loading="eager"
-                 fetchpriority="high"
-                 decoding="async"
-                 width="95"
-                 height="95">
+            <img src="https://i.ibb.co/R4zcmNqw/4elementslodgelogo.png" alt="4 Elements Lodge Logo" class="hero-logo" loading="eager" fetchpriority="high" decoding="async" width="95" height="95">
             <p>Welcome to Elite Serenity</p>
             <h1>4 Elements Lodge</h1>
             <p>Queenstown &bull; Komani &bull; South Africa</p>
@@ -896,243 +781,110 @@
         </div>
     </section>
 
-    <!-- =====================
-         BRANDING DISPLAY
-    ===================== -->
     <section class="branding-display">
         <div class="container">
             <div class="logo-image-container">
-                <img src="signoutside.jpg"
-                     alt="4 Elements Lodge Outside Entrance Logo Sign"
-                     loading="lazy"
-                     decoding="async"
-                     width="620"
-                     height="413">
+                <img src="https://i.ibb.co/HTW8XjWv/signoutside.jpg" alt="4 Elements Lodge Outside Entrance Logo Sign" loading="lazy" decoding="async" width="620" height="413">
             </div>
             <span>Our Main Signage</span>
             <h2>A Grand Welcome Awaits</h2>
         </div>
     </section>
 
-    <!-- =====================
-         ABOUT / SHOWCASE
-    ===================== -->
     <section class="about">
         <div class="container">
             <span class="section-tag">Premium South African Accommodation</span>
-            <p class="intro-text">
-                Perfectly situated at 51 Frost Street, 4 Elements Lodge merges security, absolute privacy, and meticulous design. Catering flawlessly to corporate executives and relaxation-seeking groups, our address is the gold standard for your stay in Komani.
-            </p>
+            <p class="intro-text">Perfectly situated at 51 Frost Street, 4 Elements Lodge merges security, absolute privacy, and meticulous design. Catering flawlessly to corporate executives and relaxation-seeking groups, our address is the gold standard for your stay in Komani.</p>
 
-            <!-- Row 1: Pool Area -->
             <div class="showcase-row">
-                <div class="showcase-img">
-                    <img src="roomwithpool.jpg"
-                         alt="4 Elements Lodge Pool Area"
-                         loading="lazy"
-                         decoding="async"
-                         width="620"
-                         height="420">
-                </div>
+                <div class="showcase-img"><img src="https://i.ibb.co/BHKDKgvH/roomwithpool.jpg" alt="4 Elements Lodge Pool Area"></div>
                 <div class="showcase-text">
                     <h3>A Pristine Escape</h3>
-                    <p>
-                        Cool off or lounge serenely by our flawlessly kept sparkling swimming pool. Designed specifically to grant a quiet, refreshing layout away from the daily noise, it is an ideal oasis to reset and rest your mind.
-                    </p>
+                    <p>Cool off or lounge serenely by our flawlessly kept sparkling swimming pool. Designed specifically to grant a quiet, refreshing layout away from the daily noise, it is an ideal oasis to reset and rest your mind.</p>
                 </div>
             </div>
 
-            <!-- Row 2: Beautiful Grounds -->
             <div class="showcase-row reverse">
-                <div class="showcase-img">
-                    <img src="thearea.jpg"
-                         alt="4 Elements Lodge Beautiful Grounds"
-                         loading="lazy"
-                         decoding="async"
-                         width="620"
-                         height="420">
-                </div>
+                <div class="showcase-img"><img src="https://i.ibb.co/gQMnNFb/thearea.jpg" alt="4 Elements Lodge Beautiful Grounds"></div>
                 <div class="showcase-text">
                     <h3>Beautiful Grounds</h3>
-                    <p>
-                        Rest easy knowing your peace of mind is fully taken care of. Enjoy a beautifully maintained environment that combines luxury aesthetics with protective comfort, allowing you to completely unwind during your stay.
-                    </p>
+                    <p>Rest easy knowing your peace of mind is fully taken care of. Enjoy a beautifully maintained environment that combines luxury aesthetics with protective comfort, allowing you to completely unwind during your stay.</p>
                 </div>
             </div>
 
-            <!-- Row 3: Braai Area -->
             <div class="showcase-row">
-                <div class="showcase-img">
-                    <img src="braiiarea.jpg"
-                         alt="4 Elements Lodge Outdoor Braai Area"
-                         loading="lazy"
-                         decoding="async"
-                         width="620"
-                         height="420">
-                </div>
+                <div class="showcase-img"><img src="https://i.ibb.co/3mtyHtLR/braiiarea.jpg" alt="4 Elements Lodge Outdoor Braai Area"></div>
                 <div class="showcase-text">
                     <h3>Outdoor Entertainment</h3>
-                    <p>
-                        Embrace the South African lifestyle in our dedicated Braai area. Perfectly equipped for memorable evenings, it offers a wonderful space to gather, dine, and enjoy the beautiful Komani weather.
-                    </p>
+                    <p>Embrace the South African lifestyle in our dedicated Braai area. Perfectly equipped for memorable evenings, it offers a wonderful space to gather, dine, and enjoy the beautiful Komani weather.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =====================
-         ROOM GALLERY
-    ===================== -->
     <section class="gallery-section">
         <div class="container">
             <span class="section-tag">Our Accommodations</span>
             <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">Explore Our Rooms</h2>
-
             <div class="gallery-grid">
-                <div class="room-card">
-                    <img src="room1.jpg" alt="Room 1"
-                         loading="lazy" decoding="async" width="400" height="280">
-                    <h3>Room 1</h3>
-                </div>
-                <div class="room-card">
-                    <img src="ROOM2.jpg" alt="Room 2"
-                         loading="lazy" decoding="async" width="400" height="280">
-                    <h3>Room 2</h3>
-                </div>
-                <div class="room-card">
-                    <img src="room3.jpg" alt="Room 3"
-                         loading="lazy" decoding="async" width="400" height="280">
-                    <h3>Room 3</h3>
-                </div>
-                <div class="room-card">
-                    <img src="room6.jpg" alt="Room 6"
-                         loading="lazy" decoding="async" width="400" height="280">
-                    <h3>Room 6</h3>
-                </div>
-                <div class="room-card">
-                    <img src="ROOM7-BEDROOM.jpg" alt="Room 7 Bedroom"
-                         loading="lazy" decoding="async" width="400" height="280">
-                    <h3>Room 7 Suite - Bedroom</h3>
-                </div>
-                <div class="room-card">
-                    <img src="ROOM7lounge.jpg" alt="Room 7 Lounge"
-                         loading="lazy" decoding="async" width="400" height="280">
-                    <h3>Room 7 Suite - Lounge</h3>
-                </div>
+                <div class="room-card"><img src="https://i.ibb.co/gL4hhnxP/room1.jpg" alt="Room 1"><h3>Room 1</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/ksZKBTjQ/room2.jpg" alt="Room 2"><h3>Room 2</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/JRsZ40PP/room3.jpg" alt="Room 3"><h3>Room 3</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/1f7hpkxv/room6.jpg" alt="Room 6"><h3>Room 6</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/KjgTGpFj/room7bedroom.jpg" alt="Room 7 Bedroom"><h3>Room 7 Suite - Bedroom</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/p6Z8C0MY/room7lounge.jpg" alt="Room 7 Lounge"><h3>Room 7 Suite - Lounge</h3></div>
             </div>
         </div>
     </section>
 
-    <!-- =====================
-         AMENITIES
-    ===================== -->
     <section class="amenities-section">
         <div class="container">
             <span class="section-tag">Designed For Your Comfort</span>
             <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">Premium Lodge Amenities</h2>
-
             <div class="amenities-grid">
-                <div class="amenity-card">
-                    <i class="fa-solid fa-solar-panel"></i>
-                    <h3>Backup Solar Power</h3>
-                    <p>Uninterrupted luxury. Our premium backup solar configuration guarantees light, connectivity, and absolute comfort during load shedding instances.</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-wifi"></i>
-                    <h3>High-Speed Wi-Fi</h3>
-                    <p>Stay seamlessly aligned with work commitments or stream your choice entertainment via our complimentary uncapped fibre internet link.</p>
-                </div>
-                <div class="amenity-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h3>Secure Compound</h3>
-                    <p>Your absolute safety remains paramount. Enjoy total peace of mind with robust high walls, private remote gate access control setups, and secure parking arrays.</p>
-                </div>
+                <div class="amenity-card"><i class="fa-solid fa-solar-panel"></i><h3>Backup Solar Power</h3><p>Uninterrupted luxury. Our premium backup solar configuration guarantees light, connectivity, and absolute comfort during load shedding instances.</p></div>
+                <div class="amenity-card"><i class="fa-solid fa-wifi"></i><h3>High-Speed Wi-Fi</h3><p>Stay seamlessly aligned with work commitments or stream your choice entertainment via our complimentary uncapped fibre internet link.</p></div>
+                <div class="amenity-card"><i class="fa-solid fa-shield-halved"></i><h3>Secure Compound</h3><p>Your absolute safety remains paramount. Enjoy total peace of mind with robust high walls, private remote gate access control setups, and secure parking arrays.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- =====================
-         HOST / IDENTITY SECTION
-    ===================== -->
     <section class="host-section">
         <div class="container">
             <div class="host-card">
-
                 <div class="avatar-container">
-                    <img src="Whats-App-Image-2026-06-05-at-13-21-35.jpg"
-                         alt="4 Elements Lodge Family"
-                         class="host-avatar"
-                         loading="lazy"
-                         decoding="async"
-                         width="500"
-                         height="375">
+                    <img src="https://i.ibb.co/QjKMvRvq/Whats-App-Image-2026-06-05-at-13-21-35.jpg" alt="4 Elements Lodge Family" class="host-avatar" loading="lazy" decoding="async" width="500" height="375">
                 </div>
-
                 <span class="section-tag" style="margin-bottom: 10px;">Our Identity &amp; Journey</span>
                 <h2>The Meaning Behind Our Logo</h2>
                 <div class="host-message">
-                    <p style="margin-bottom: 20px;">
-                        When you look at the logo for 4 Elements Lodge, you will see a journey woven into symbols: a cross, a heartbeat, a heart, and a dove.
-                    </p>
-                    <p style="margin-bottom: 20px;">
-                        To us, this is not just a design — it is the soul of our lodge. The cross represents our grounding and faith. The heartbeat and heart symbolize the vibrant life, love, and connection we share here today — anchored by my children, George and Leo, whose energy and involvement bring this beautiful space to life for our family, friends, and guests.
-                    </p>
-                    <p style="margin-bottom: 20px;">
-                        The dove carries a special, quiet weight. It flies in honor of the people we have lost — those precious souls who are no longer walking beside us, but whose presence we carry in our hearts forever.
-                    </p>
-                    <p>
-                        4 Elements Lodge was built to be a peaceful retreat. It is a place to step away from the world, to remember, to heal, and to find quiet comfort. Whether you are here to celebrate life with loved ones or to find a moment of calm reflection, our doors — and our hearts — are open to you.
-                    </p>
+                    <p style="margin-bottom: 20px;">When you look at the logo for 4 Elements Lodge, you will see a journey woven into symbols: a cross, a heartbeat, a heart, and a dove.</p>
+                    <p style="margin-bottom: 20px;">To us, this is not just a design — it is the soul of our lodge. The cross represents our grounding and faith. The heartbeat and heart symbolize the vibrant life, love, and connection we share here today — anchored by my children, George and Leo, whose energy and involvement bring this beautiful space to life for our family, friends, and guests.</p>
+                    <p style="margin-bottom: 20px;">The dove carries a special, quiet weight. It flies in honor of the people we have lost — those precious souls who are no longer walking beside us, but whose presence we carry in our hearts forever.</p>
+                    <p>4 Elements Lodge was built to be a peaceful retreat. It is a place to step away from the world, to remember, to heal, and to find quiet comfort. Whether you are here to celebrate life with loved ones or to find a moment of calm reflection, our doors — and our hearts — are open to you.</p>
                 </div>
                 <div class="signature-block">- The Dougias Family</div>
             </div>
         </div>
     </section>
 
-    <!-- =====================
-         GUEST REVIEWS
-    ===================== -->
     <section class="reviews-section">
         <div class="container">
             <span class="section-tag" style="color: var(--accent);">Guest Testimonials</span>
             <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">What Our Guests Say</h2>
-
             <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"Tracy went out of her way to help us. First thing I noticed is how nice the rooms smell. Everything was crisp and beautiful... Real value for money, greatly appreciated!"</p>
-                    <div class="author">Susan L. &bull; Family Stay</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"After 8 hours on the road, this was an oasis. Wonderful stay, owner went out of her way to make our stay as pleasant as possible. Very safe and quiet neighborhood."</p>
-                    <div class="author">Anton D. &bull; Couple Getaway</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p>"Nice quiet accommodation. Host was very accommodating, not obtrusive, and gave us the run of the property. Accommodation was large, spacious, with all amenities."</p>
-                    <div class="author">Michael C. &bull; Corporate Traveler</div>
-                </div>
+                <div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p>"Tracy went out of her way to help us. First thing I noticed is how nice the rooms smell. Everything was crisp and beautiful... Real value for money, greatly appreciated!"</p><div class="author">Susan L. &bull; Family Stay</div></div>
+                <div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p>"After 8 hours on the road, this was an oasis. Wonderful stay, owner went out of her way to make our stay as pleasant as possible. Very safe and quiet neighborhood."</p><div class="author">Anton D. &bull; Couple Getaway</div></div>
+                <div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p>"Nice quiet accommodation. Host was very accommodating, not obtrusive, and gave us the run of the property. Accommodation was large, spacious, with all amenities."</p><div class="author">Michael C. &bull; Corporate Traveler</div></div>
             </div>
         </div>
     </section>
 
-    <!-- =====================
-         BOOKING FORM + MAP
-    ===================== -->
     <section id="enquire" class="contact-form-section">
         <div class="container">
             <span class="section-tag">Booking Enquiries &amp; Location</span>
             <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px; text-align: center;">Secure Your Dates</h2>
-
             <div class="contact-layout-grid">
-
                 <div class="form-container">
                     <form action="https://formspree.io/f/xqeoageg" method="POST">
                         <div class="form-row">
@@ -1145,7 +897,6 @@
                                 <input type="text" id="surname" name="lastName" required placeholder="e.g. Smith" autocomplete="family-name">
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email Address</label>
@@ -1156,7 +907,6 @@
                                 <input type="tel" id="phone" name="phoneNumber" required placeholder="e.g. 082 123 4567" autocomplete="tel">
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="arrival">Arrival Date</label>
@@ -1167,65 +917,35 @@
                                 <input type="date" id="departure" name="departureDate" required>
                             </div>
                         </div>
-
                         <div class="form-group full-width">
                             <label for="message">Message / Booking Requirements</label>
                             <textarea id="message" name="message" required placeholder="Please let us know the number of guests or any special requests..."></textarea>
                         </div>
-
                         <button type="submit" class="submit-btn">Submit Booking Request</button>
                     </form>
                 </div>
-
                 <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.5002047814324!2d26.868779076295325!3d-31.89295557004491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6211606ffc6b5b%3A0xeae062cf4e723cc9!2s51%20Frost%20St%2C%20Queenstown%2C%205320!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="4 Elements Lodge Location - 51 Frost Street, Queenstown"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.5002047814324!2d26.868779076295325!3d-31.89295557004491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6211606ffc6b5b%3A0xeae062cf4e723cc9!2s51%20Frost%20St%2C%20Queenstown%2C%205320!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="4 Elements Lodge Location - 51 Frost Street, Queenstown"></iframe>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- =====================
-         FOOTER
-    ===================== -->
     <footer id="contact">
         <div class="container">
             <span class="section-tag" style="color: var(--accent);">Reservations &amp; Bookings</span>
-
             <div class="contact-details">
-                <div class="contact-item">
-                    <span class="label">Physical Address</span>
-                    <p>51 Frost Street, Queenstown,<br>Komani, South Africa, 5320</p>
-                </div>
-
+                <div class="contact-item"><span class="label">Physical Address</span><p>51 Frost Street, Queenstown,<br>Komani, South Africa, 5320</p></div>
                 <div class="divider"></div>
-
-                <div class="contact-item">
-                    <span class="label">Phone / WhatsApp</span>
-                    <a href="tel:0839438508">083 943 8508</a>
-                </div>
-
+                <div class="contact-item"><span class="label">Phone / WhatsApp</span><a href="tel:0839438508">083 943 8508</a></div>
                 <div class="divider"></div>
-
-                <div class="contact-item">
-                    <span class="label">Email Address</span>
-                    <a href="mailto:4elementslodge@gmail.com">4elementslodge@gmail.com</a>
-                </div>
+                <div class="contact-item"><span class="label">Email Address</span><a href="mailto:4elementslodge@gmail.com">4elementslodge@gmail.com</a></div>
             </div>
-
             <p class="copyright">&copy; 2026 4 Elements Lodge. All Rights Reserved.</p>
             <p class="designer-credit">Website made by George D</p>
         </div>
     </footer>
 
-    <!-- =====================
-         FLOATING WHATSAPP
-    ===================== -->
     <a href="https://wa.me/27839438508?text=Hi%20there,%20I%20would%20like%20to%20enquire%20about%20a%20stay%20at%204%20Elements%20Lodge."
        target="_blank"
        rel="noopener noreferrer"
@@ -1236,13 +956,10 @@
     </a>
 
     <script>
-        // Reset form after successful submit
         document.querySelector('form').addEventListener('submit', function () {
             setTimeout(() => { this.reset(); }, 500);
         });
 
-        // If any image fails to load, hide it gracefully
-        // instead of showing a broken-image icon
         document.querySelectorAll('img').forEach(function (img) {
             img.addEventListener('error', function () {
                 this.style.visibility = 'hidden';
