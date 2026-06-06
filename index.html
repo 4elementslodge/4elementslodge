@@ -18,79 +18,233 @@
             --text-light: #FFFFFF;
             --font-serif: 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Montserrat', sans-serif;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s ease;
         }
 
-        /* Simplified critical CSS for speed */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-sans); color: var(--text-dark); background-color: var(--text-light); line-height: 1.6; }
-        
-        /* Optimized Hero - Ensure this loads instantly */
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--text-dark); background-color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- Fixed Header --- */
+        header {
+            background-color: rgba(26, 34, 38, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-light); text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: var(--accent); }
+        .nav-btn { background: var(--accent); color: var(--primary); padding: 10px 20px; text-decoration: none; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* --- Hero Section --- */
         .hero {
-            height: 80vh; /* Slightly smaller on mobile for faster visual stability */
-            background: linear-gradient(rgba(26, 34, 38, 0.65), rgba(26, 34, 38, 0.55)), 
+            height: 100vh;
+            background: linear-gradient(rgba(26, 34, 38, 0.6), rgba(26, 34, 38, 0.5)), 
                         url('https://i.ibb.co/9k7J8hGG/sunsetofthebnb.avif') center/cover no-repeat;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light);
         }
+        .hero-content h1 { font-family: var(--font-serif); font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 10px; font-weight: 400; }
+        .hero-content p { font-size: 1.1rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
 
-        .hero-logo { max-width: 150px; height: auto; margin-bottom: 20px; display: block; }
+        /* --- Branding --- */
+        .branding { padding: 80px 0; text-align: center; }
+        .logo-box { max-width: 600px; margin: 0 auto 30px; border: 1px solid #EAE6DF; padding: 15px; background: var(--light-bg); }
+        .logo-box img { width: 100%; height: auto; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* --- Showcase Rows --- */
+        .showcase { padding: 60px 0; background: var(--light-bg); }
+        .showcase-row { display: flex; flex-direction: column; gap: 40px; margin-bottom: 80px; align-items: center; }
+        .showcase-img { width: 100%; border: 1px solid #EAE6DF; padding: 10px; background: #fff; }
+        .showcase-img img { width: 100%; height: 400px; object-fit: cover; }
+        .showcase-text { text-align: center; }
+        .showcase-text h3 { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 15px; font-weight: 400; }
+
+        @media (min-width: 768px) {
+            .showcase-row { flex-direction: row; text-align: left; }
+            .showcase-row.reverse { flex-direction: row-reverse; }
+            .showcase-img { flex: 1.2; }
+            .showcase-text { flex: 1; text-align: left; }
+        }
+
+        /* --- Gallery --- */
+        .gallery { padding: 80px 0; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .room-card { border: 1px solid #EAE6DF; padding: 10px; background: var(--light-bg); transition: var(--transition); }
+        .room-card:hover { transform: translateY(-5px); }
+        .room-card img { width: 100%; height: 250px; object-fit: cover; }
+        .room-card h3 { font-family: var(--font-serif); padding: 15px 0; font-size: 1.4rem; }
+
+        /* --- Host Section --- */
+        .host-section { padding: 80px 0; background: #fff; text-align: center; }
+        .avatar-container { width: 100%; max-width: 550px; margin: 0 auto 30px; border: 3px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .avatar-container img { width: 100%; height: auto; display: block; }
+        .host-message { max-width: 800px; margin: 0 auto; font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.8; color: #444; }
+
+        /* --- Contact Form --- */
+        .contact-section { padding: 80px 0; background: var(--light-bg); }
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media (min-width: 992px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
         
-        /* Fix for images to ensure they don't cause layout shifts */
-        img { max-width: 100%; height: auto; display: block; }
+        .form-container { background: #fff; padding: 40px; border: 1px solid #EAE6DF; }
+        .form-row { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 20px; }
+        @media (min-width: 600px) { .form-row { grid-template-columns: 1fr 1fr; } }
+        
+        .form-group { display: flex; flex-direction: column; text-align: left; }
+        .form-group label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px; color: var(--primary); }
+        .form-group input, .form-group textarea { padding: 12px; border: 1px solid #CCC; font-family: var(--font-sans); }
+        .submit-btn { width: 100%; padding: 15px; background: var(--primary); color: #fff; border: none; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; cursor: pointer; }
 
-        /* ... [Keep all other CSS from previous version below here] ... */
-        .nav-btn { display: inline-block; padding: 10px 20px; background: var(--accent); color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
-        header { padding: 15px 0; background: rgba(26, 34, 38, 0.95); position: sticky; top: 0; z-index: 1000; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-        .showcase-row { display: flex; flex-direction: column; gap: 30px; margin-bottom: 50px; }
-        @media (min-width: 768px) { .showcase-row { flex-direction: row; align-items: center; } }
+        .map-container iframe { width: 100%; height: 450px; border: 0; }
+
+        /* --- Footer --- */
+        footer { background: var(--primary); color: #fff; padding: 60px 0; text-align: center; }
+        .footer-link { color: var(--accent); text-decoration: none; font-family: var(--font-serif); font-size: 1.5rem; display: block; margin: 10px 0; }
+
+        /* --- Floating Elements --- */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; z-index: 2000;
+            background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px;
+            text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 600px) { .whatsapp-float span { display: none; } .whatsapp-float { padding: 15px; border-radius: 50%; } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="#" style="color:white; font-family:var(--font-serif); font-size: 1.5rem; text-decoration:none;">4 Elements Lodge</a>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">4 Elements Lodge<span>.</span></a>
             <a href="#enquire" class="nav-btn">Contact Us</a>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <!-- CRITICAL: High priority image -->
-            <img src="https://i.ibb.co/Lh2W123/your-uploaded-logo.jpg" alt="Logo" class="hero-logo" fetchpriority="high">
+        <div class="container hero-content">
+            <p>Welcome to Serenity</p>
             <h1>4 Elements Lodge</h1>
+            <p>Queenstown • Komani</p>
+            <a href="#enquire" class="nav-btn" style="padding: 15px 30px; font-size: 0.9rem;">Book Your Stay</a>
         </div>
     </section>
 
-    <section class="about" style="padding: 50px 0;">
+    <section class="branding">
+        <div class="container">
+            <div class="logo-box">
+                <img src="https://i.ibb.co/HL74MF2V/signoutside.avif" alt="Outside Sign" loading="lazy">
+            </div>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400;">A Grand Welcome</h2>
+        </div>
+    </section>
+
+    <section class="showcase">
         <div class="container">
             <div class="showcase-row">
-                <img src="https://i.ibb.co/prhBkx6T/roomwithpool.avif" alt="Pool" loading="lazy" decoding="async">
-                <div>
-                    <h2>A Pristine Escape</h2>
-                    <p>Designed for comfort and privacy.</p>
+                <div class="showcase-img">
+                    <img src="https://i.ibb.co/prhBkx6T/roomwithpool.avif" alt="Pool Area" loading="lazy" decoding="async">
+                </div>
+                <div class="showcase-text">
+                    <h3>Pristine Escape</h3>
+                    <p>Cool off or lounge serenely by our sparkling pool. Designed to grant a quiet, refreshing layout away from the daily noise.</p>
+                </div>
+            </div>
+
+            <div class="showcase-row reverse">
+                <div class="showcase-img">
+                    <img src="https://i.ibb.co/v6LwydkV/thearea.avif" alt="The Grounds" loading="lazy" decoding="async">
+                </div>
+                <div class="showcase-text">
+                    <h3>Beautiful Grounds</h3>
+                    <p>Experience a perfectly maintained environment at 51 Frost Street, merging high-end security with luxury aesthetics.</p>
+                </div>
+            </div>
+
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="https://i.ibb.co/g1BHg6D/braiiarea.avif" alt="Braai Area" loading="lazy" decoding="async">
+                </div>
+                <div class="showcase-text">
+                    <h3>Outdoor Dining</h3>
+                    <p>Embrace the South African lifestyle in our dedicated Braai area. A wonderful space to gather and dine under the stars.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section">
+    <section class="gallery">
         <div class="container">
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400;">Our Rooms</h2>
             <div class="gallery-grid">
-                <img src="https://i.ibb.co/tT2zjzM5/room1.avif" alt="Room 1" loading="lazy" decoding="async">
-                <img src="https://i.ibb.co/p6G7yZCT/ROOM2.avif" alt="Room 2" loading="lazy" decoding="async">
-                <img src="https://i.ibb.co/hJtnLmHJ/room3.avif" alt="Room 3" loading="lazy" decoding="async">
-                <img src="https://i.ibb.co/NdbGtXGW/room6.avif" alt="Room 6" loading="lazy" decoding="async">
+                <div class="room-card"><img src="https://i.ibb.co/tT2zjzM5/room1.avif" alt="Room 1" loading="lazy" decoding="async"><h3>Room 1</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/p6G7yZCT/ROOM2.avif" alt="Room 2" loading="lazy" decoding="async"><h3>Room 2</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/hJtnLmHJ/room3.avif" alt="Room 3" loading="lazy" decoding="async"><h3>Room 3</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/NdbGtXGW/room6.avif" alt="Room 6" loading="lazy" decoding="async"><h3>Room 6</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/84GPSz81/ROOM7-BEDROOM.avif" alt="Room 7 Suite" loading="lazy" decoding="async"><h3>Room 7 - Bedroom</h3></div>
+                <div class="room-card"><img src="https://i.ibb.co/b5LJD499/ROOM7lounge.avif" alt="Room 7 Lounge" loading="lazy" decoding="async"><h3>Room 7 - Lounge</h3></div>
             </div>
         </div>
     </section>
 
+    <section class="host-section">
+        <div class="container">
+            <div class="avatar-container">
+                <img src="https://i.ibb.co/ynfnB8fp/Whats-App-Image-2026-06-05-at-13-21-35.jpg" alt="The Family" loading="lazy">
+            </div>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 20px;">Meaning Behind the Logo</h2>
+            <div class="host-message">
+                <p>To us, 4 Elements Lodge is more than a stay—it is the soul of our family. Anchored by my children, George and Leo, this space was built to be a peaceful haven for those seeking quiet comfort and healing. Our doors, and our hearts, are open to you.</p>
+                <p style="margin-top: 20px; font-weight: 600; color: var(--accent);">- The Dougias Family</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="enquire" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="form-container">
+                    <form action="https://formspree.io/f/xqeoageg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group"><label>First Name</label><input type="text" name="name" required></div>
+                            <div class="form-group"><label>Surname</label><input type="text" name="surname" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Arrival</label><input type="date" name="arrival" required></div>
+                            <div class="form-group"><label>Departure</label><input type="date" name="departure" required></div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:20px;"><label>Message</label><textarea name="message" rows="4"></textarea></div>
+                        <button type="submit" class="submit-btn">Request Booking</button>
+                    </form>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.5002047814324!2d26.868779076295325!3d-31.89295557004491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6211606ffc6b5b%3A0xeae062cf4e723cc9!2s51%20Frost%20St%2C%20Queenstown%2C%205320!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>51 Frost Street, Queenstown, Komani</p>
+            <a href="tel:0839438508" class="footer-link">083 943 8508</a>
+            <a href="mailto:4elementslodge@gmail.com" class="footer-link" style="font-size: 1.2rem;">4elementslodge@gmail.com</a>
+            <p style="margin-top: 30px; font-size: 0.7rem; opacity: 0.6;">&copy; 2026 4 Elements Lodge. Website by George D.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/27839438508" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
     <script>
-        // Form handling remains the same
+        document.querySelector('form').addEventListener('submit', function() {
+            setTimeout(() => { this.reset(); }, 500);
+        });
     </script>
 </body>
 </html>
