@@ -106,7 +106,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(26, 34, 38, 0.65), rgba(26, 34, 38, 0.55)), 
-                        url('https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA9394a143fb6bde28092518cc6371075b63e3f320f6b1df7b527beff7de57eb223b44407a678cae7c1ce0cfe8ab3cd37ed224?w=2400&fit=crop&auto=enhance,format,compress&q=80') center/cover no-repeat;
+                        url('https://i.ibb.co/9k7J8hGG/sunsetofthebnb.avif') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -266,10 +266,51 @@
             color: #666;
         }
 
+        /* --- Room Gallery Section --- */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: var(--text-light);
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .room-card {
+            border: 1px solid #EAE6DF;
+            padding: 10px;
+            background-color: var(--light-bg);
+            transition: var(--transition);
+        }
+
+        .room-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .room-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--primary);
+            padding: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
         /* --- Amenities Section --- */
         .amenities-section {
             padding: 100px 0;
-            background-color: var(--text-light);
+            background-color: var(--light-bg);
             text-align: center;
         }
 
@@ -282,7 +323,7 @@
 
         .amenity-card {
             padding: 40px 20px;
-            background-color: var(--light-bg);
+            background-color: var(--text-light);
             border: 1px solid #EAE6DF;
             transition: var(--transition);
         }
@@ -314,7 +355,7 @@
         /* --- Meet Your Host Section / Meaning Behind the Logo --- */
         .host-section {
             padding: 100px 0;
-            background-color: var(--light-bg);
+            background-color: var(--text-light);
             text-align: center;
         }
 
@@ -326,7 +367,6 @@
             padding: 60px 20px;
         }
 
-        /* UPDATED AVATAR CONTAINER TO FIT THE ENTIRE FAMILY IMAGE */
         .avatar-container {
             width: 100%;
             max-width: 500px;
@@ -586,6 +626,39 @@
             text-transform: uppercase;
         }
 
+        /* --- Floating WhatsApp Button --- */
+        .whatsapp-float {
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 9999; 
+            background-color: #25D366; 
+            color: #ffffff; 
+            padding: 15px 20px; 
+            border-radius: 50px; 
+            font-size: 24px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            color: #ffffff;
+        }
+
+        .whatsapp-text {
+            font-family: var(--font-sans); 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+
         /* --- Responsive Viewports --- */
         @media (max-width: 992px) {
             .contact-layout-grid {
@@ -629,6 +702,10 @@
             .form-container { padding: 30px 20px; }
             .form-row { flex-direction: column; gap: 20px; }
             .contact-item p, .contact-item a { font-size: 1.3rem; }
+            
+            /* Hide WhatsApp text on mobile for a cleaner circle button */
+            .whatsapp-text { display: none; }
+            .whatsapp-float { padding: 15px; right: 20px; bottom: 20px; }
         }
     </style>
 </head>
@@ -657,7 +734,7 @@
     <section class="branding-display">
         <div class="container">
             <div class="logo-image-container">
-                <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA4478958bb5121a264475f542129c96ead062a0a2d51c731ef0d5f05c67550122f6c563d88bd64a26647e7a38426993f05629?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="4 Elements Lodge Outside Entrance Logo Sign">
+                <img src="https://i.ibb.co/HL74MF2V/signoutside.avif" alt="4 Elements Lodge Outside Entrance Logo Sign">
             </div>
             <span>Our Main Signage</span>
             <h2>A Grand Welcome Awaits</h2>
@@ -675,7 +752,7 @@
             <!-- Row 1: The Pool Area Experience -->
             <div class="showcase-row">
                 <div class="showcase-img">
-                    <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA414d3dc022503c544ae6366e14b92b6d241c512d75577cfdca7522d830ead2c6b70b5151f5fedcc35fb41b8dacfdc3409e30?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="4 Elements Lodge Crystal Clear Pool Area">
+                    <img src="https://i.ibb.co/prhBkx6T/roomwithpool.avif" alt="4 Elements Lodge Pool Area">
                 </div>
                 <div class="showcase-text">
                     <h3>A Pristine Escape</h3>
@@ -688,13 +765,61 @@
             <!-- Row 2: Secure Luxury Details -->
             <div class="showcase-row reverse">
                 <div class="showcase-img">
-                    <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA5170e4c90427fcb45855605d5c518a87f7389f4b15ce1883dc54e4c91f1311832806613382443e29b9cc9bd173eedd9784ad?w=2400&fit=crop&auto=enhance,format,compress&q=80" alt="4 Elements Lodge Secure High-End Compound">
+                    <img src="https://i.ibb.co/v6LwydkV/thearea.avif" alt="4 Elements Lodge Beautiful Grounds">
                 </div>
                 <div class="showcase-text">
-                    <h3>Uncompromising Security</h3>
+                    <h3>Beautiful Grounds</h3>
                     <p>
-                        Rest easy knowing your peace of mind is fully taken care of. Our secure perimeter, automated main entry access control points, and neat interior driveway layout combine luxury aesthetics with ultimate protective comfort.
+                        Rest easy knowing your peace of mind is fully taken care of. Enjoy a beautifully maintained environment that combines luxury aesthetics with protective comfort, allowing you to completely unwind during your stay.
                     </p>
+                </div>
+            </div>
+
+            <!-- Row 3: Braai Area -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="https://i.ibb.co/g1BHg6D/braiiarea.avif" alt="4 Elements Lodge Outdoor Braai Area">
+                </div>
+                <div class="showcase-text">
+                    <h3>Outdoor Entertainment</h3>
+                    <p>
+                        Embrace the South African lifestyle in our dedicated Braai area. Perfectly equipped for memorable evenings, it offers a wonderful space to gather, dine, and enjoy the beautiful Komani weather.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <span class="section-tag">Our Accommodations</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; margin-top: 5px;">Explore Our Rooms</h2>
+            
+            <div class="gallery-grid">
+                <div class="room-card">
+                    <img src="https://i.ibb.co/tT2zjzM5/room1.avif" alt="Room 1">
+                    <h3>Room 1</h3>
+                </div>
+                <div class="room-card">
+                    <img src="https://i.ibb.co/p6G7yZCT/ROOM2.avif" alt="Room 2">
+                    <h3>Room 2</h3>
+                </div>
+                <div class="room-card">
+                    <img src="https://i.ibb.co/hJtnLmHJ/room3.avif" alt="Room 3">
+                    <h3>Room 3</h3>
+                </div>
+                <div class="room-card">
+                    <img src="https://i.ibb.co/NdbGtXGW/room6.avif" alt="Room 6">
+                    <h3>Room 6</h3>
+                </div>
+                <div class="room-card">
+                    <img src="https://i.ibb.co/84GPSz81/ROOM7-BEDROOM.avif" alt="Room 7 Bedroom">
+                    <h3>Room 7 Suite - Bedroom</h3>
+                </div>
+                <div class="room-card">
+                    <img src="https://i.ibb.co/b5LJD499/ROOM7lounge.avif" alt="Room 7 Lounge">
+                    <h3>Room 7 Suite - Lounge</h3>
                 </div>
             </div>
         </div>
@@ -748,7 +873,7 @@
                         The dove carries a special, quiet weight. It flies in honor of the people we have lost—those precious souls who are no longer walking beside us, but whose presence we carry in our hearts forever.
                     </p>
                     <p>
-                        4 Elements Lodge was built to be a peaceful haven. It is a place to step away from the world, to remember, to heal, and to find quiet comfort. Whether you are here to celebrate life with loved ones or to find a moment of calm reflection, our doors—and our hearts—are open to you.
+                        4 Elements Lodge was built to be a peaceful retreat. It is a place to step away from the world, to remember, to heal, and to find quiet comfort. Whether you are here to celebrate life with loved ones or to find a moment of calm reflection, our doors—and our hearts—are open to you.
                     </p>
                 </div>
                 <div class="signature-block">- The Dougias Family</div>
@@ -820,7 +945,7 @@
                             </div>
                         </div>
 
-                        <!-- NEW: Arrival & Departure Dates -->
+                        <!-- Arrival & Departure Dates -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="arrival">Arrival Date</label>
@@ -879,20 +1004,21 @@
             <p class="designer-credit">Website made by George D</p>
         </div>
     </footer>
-<script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27839438508?text=Hi%20there,%20I%20would%20like%20to%20enquire%20about%20a%20stay%20at%204%20Elements%20Lodge." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- Form Clear Script -->
+    <script>
         document.querySelector('form').addEventListener('submit', function() {
-            // Use setTimeout to ensure the fields clear right after the click event
             setTimeout(() => {
                 this.reset();
             }, 500);
         });
     </script>
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/27839438508?text=Hi%20there,%20I%20would%20like%20to%20enquire%20about%20a%20stay%20at%204%20Elements%20Lodge." 
-   target="_blank" 
-   style="position:fixed; bottom:30px; right:30px; z-index:9999; background-color:#25D366; color:#ffffff; padding:15px 20px; border-radius:50px; font-size:24px; box-shadow:0 4px 10px rgba(0,0,0,0.3); text-decoration:none; display:flex; align-items:center; gap:10px; transition:0.3s;">
-    <i class="fab fa-whatsapp"></i>
-    <span style="font-family:Montserrat, sans-serif; font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Chat with us</span>
-</a>
+
 </body>
 </html>
